@@ -1,0 +1,9 @@
+<h1>Documents</h1>
+<ul>
+  <% @documents.each do |document| %>
+
+  <li>
+    <%= link_to "#{document.id} - #{document.document_data['customer_name']} - #{document.created_at.strftime("%B %b, %Y")} ", template_api_v1_documents_path(uuid: document.uuid) %>
+  </li>
+  <%end%>
+</ul>
