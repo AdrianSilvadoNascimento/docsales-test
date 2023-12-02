@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :documents, only: [] do
+      resources :documents, only: [:new, :create, :index] do
         collection do
           get 'list', to: 'documents#index'
           get 'template', to: 'documents#template'
-          post 'create', to: 'documents#create'
         end
         
         member do

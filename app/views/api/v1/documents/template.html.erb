@@ -27,7 +27,7 @@
     padding: 15px 22px;
     color: #fff;
     font-size: 14px;
-    text-shadow: 0 0 10px rgba(0,0,0,0);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0);
     background-color: #E31075;
     font-weight: 550;
     text-decoration: none;
@@ -41,6 +41,10 @@
     background-color: transparent;
   }
 </style>
+
+<% if @document.nil? == false %>
+  <%= link_to 'Back', list_api_v1_documents_path %>
+<% end %>
 
 <h1>Contrato de prestação de serviços</h1>
 

@@ -1,0 +1,22 @@
+<h1>Novo Projeto</h1>
+<%= link_to 'Back', list_api_v1_documents_path %>
+<%= form_with(model: @document, url: @document.new_record? ? api_v1_documents_path : api_v1_document_path(@document), local: true) do |form| %>
+  <div>
+    <%= form.label :customer_name %>
+    <%= form.text_field :customer_name %>
+  </div>
+
+  <div>
+    <%= form.label :contract_value %>
+    <%= form.text_field :contract_value %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit 'Generate PDF' %>
+  </div>
+<% end %>

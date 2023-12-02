@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'pdfkit'
 gem 'render_anywhere'
 gem 'wkhtmltopdf-binary'
+gem 'google-cloud-storage'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
