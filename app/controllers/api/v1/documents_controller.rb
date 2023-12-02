@@ -63,7 +63,6 @@ class Api::V1::DocumentsController < ApplicationController
 
       file_name = "pdf_#{SecureRandom.uuid}.pdf"
 
-      debugger
       file = bucket.create_file(pdf_data, file_name)
 
       file.url

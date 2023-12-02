@@ -1,22 +1,26 @@
-<h1>Novo Projeto</h1>
-<%= link_to 'Back', list_api_v1_documents_path %>
+<h1>New Document</h1>
+<a href="<%= list_api_v1_documents_path %>" class="return">Back</a>
 <%= form_with(model: @document, url: @document.new_record? ? api_v1_documents_path : api_v1_document_path(@document), local: true) do |form| %>
-  <div>
-    <%= form.label :customer_name %>
-    <%= form.text_field :customer_name %>
-  </div>
+  <div class="form">
+    <div class="card">
+      <div class="form-group">
+        <%= form.label :customer_name, class: 'custom-label' %>
+        <%= form.text_field :customer_name, class: 'custom-input' %>
+      </div>
 
-  <div>
-    <%= form.label :contract_value %>
-    <%= form.text_field :contract_value %>
-  </div>
+      <div class="form-group">
+        <%= form.label :contract_value, class: 'custom-label' %>
+        <%= form.text_field :contract_value, class: 'custom-input' %>
+      </div>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="form-group">
+        <%= form.label :description, class: 'custom-label' %>
+        <%= form.text_area :description, class: 'custom-text-area' %>
+      </div>
 
-  <div>
-    <%= form.submit 'Generate PDF' %>
+      <div class="form-group">
+        <%= form.submit 'Generate PDF', class: 'return' %>
+      </div>
+    </div>
   </div>
 <% end %>

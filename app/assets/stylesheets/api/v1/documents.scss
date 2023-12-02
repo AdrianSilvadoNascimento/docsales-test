@@ -1,3 +1,156 @@
-// Place all the styles related to the Api::V1::Documents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.create_document {
+  margin: 0 0 15px 0;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  background-color: #E31075;
+  color: #fff;
+  border-radius: 12px;
+  margin: 15px 0;
+  display: inline-block;
+  transition: 0.1s ease-in-out;
+  font-weight: 550;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.create_document:hover {
+  color: #E31075;
+  background-color: transparent;
+}
+
+.documents_background {
+  max-width: 1280px;
+  min-width: 360px;
+  border: 0.5px solid #d8d8d8;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+
+  .document {
+    border: 0.5px solid #d8d8d8;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+    width: 220px;
+    margin: 15px 10px;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+
+    .document_header {
+      text-align: center;
+      font-size: 16px;
+    }
+    
+    .document_header, .document_body p {
+      color: #000;
+    }
+    
+    .document_body {
+      p {
+        padding: 0 15px;
+        text-align: justify;
+      }
+    }
+
+    .action_bar {
+      border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 5px 5px 0;
+      .button {
+        outline: 0;
+        padding: 5px 12px;
+        color: #E31075;
+        font-size: 12px;
+        font-weight: 550;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        border-color: #E31075;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: 0.15s ease-in-out;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        color: #fff;
+        background-color:#E31075;
+      }
+    }
+  }
+
+  .document:hover {
+    position: relative;
+    top: -10px;
+  }
+}
+
+// Styles for new.html
+.return {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #E31075;
+  color: #E31075;
+  display: inline-block;
+  margin-bottom: 15px;
+  transition: 0.1s ease-in;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.return:hover {
+  color: #fff;
+  background-color: #E31075;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .card {
+    width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    
+    .form-group {
+      margin: 15px 0;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+      .custom-label {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .custom-input, .custom-text-area {
+        border-radius: 8px;
+        padding: 8px 0 8px 10px;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+        border: 0.2px solid rgba(0, 0, 0, 0.3);
+      }
+
+      .custom-input:focus, .custom-text-area:focus {
+        outline: 0;
+      }
+
+      .custom-text-area {
+        height: 80px;
+        resize: none;
+      }
+    }
+  }
+}
+

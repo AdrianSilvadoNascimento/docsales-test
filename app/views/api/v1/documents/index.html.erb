@@ -1,10 +1,26 @@
-<h1>Documents</h1>
-<%=link_to "Create new PDF", new_api_v1_document_path %>
-<ul>
-  <% @documents.each do |document| %>
+<h1>List of Documents</h1>
 
-  <li>
-    <%= link_to "#{document.id} - #{document.document_data['customer_name']} - #{document.created_at.strftime("%B %b, %Y")} ", template_api_v1_documents_path(uuid: document.uuid) %>
-  </li>
-  <%end%>
-</ul>
+<a href="<%= "#{new_api_v1_document_path}" %>" class="create_document">+ Generate New Document</a>
+
+<article class="documents_background">
+  <% @documents.each do |document| %>
+    <div class="document">
+      <div class="document_header">
+        <h3><%= document.document_data['customer_name'] %></h3>
+      </div>
+
+      <div class="document_body">
+        <p>
+          <%= document&.description %>
+        </p>
+        <p>
+          Created at: <%= document.created_at.strftime("%d/%m/%Y") %>
+        </p>
+      </div>
+
+      <div class="action_bar">
+        <a href="<%= template_api_v1_documents_path(uuid: document.uuid) %>" class="button">Download</a>
+      </div>
+    </div>
+  <% end %>
+</article>
