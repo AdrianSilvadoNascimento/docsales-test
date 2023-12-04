@@ -12,16 +12,28 @@ class Api::V1::DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new()
-    @document.uuid = generate_uuid
-    @document.document_data = document_params
+    @document = Document.new
 
-    if @document.save
-      generate_and_upload_pdf
-      redirect_to template_api_v1_documents_path(uuid: @document.uuid), notice: 'Pdf has been generate successfuly'
-    else
+    if check_params(document_params) == false
+      flash[:error] = "Error generating PDF"
       render :new
     end
+
+    @document.uuid = generate_uuid
+    @document.document_data = document_params
+    @document.description = document_params['description']
+
+    if @document.save!
+      generate_and_upload_pdf
+
+      redirect_to template_api_v1_documents_path(uuid: @document.uuid), notice: 'Pdf has been generated successfully'
+    end
+  end
+
+  def destroy
+    @document = Document.find_by(uuid: params['uuid'])
+    @document.destroy
+    redirect_to api_v1_documents_path, notice: 'Document has been successfuly deleted'
   end
 
   def template
@@ -38,6 +50,10 @@ class Api::V1::DocumentsController < ApplicationController
 
   private
 
+    def check_params(params)
+      return false if params['customer_name'].blank? || params['contract_value'].blank? || params['description'].blank?
+    end
+  
     def set_document
       @document = Document.find_by(uuid: params['uuid'])
     end

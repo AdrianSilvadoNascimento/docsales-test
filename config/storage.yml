@@ -23,18 +23,7 @@ local:
 google:
   service: GCS
   project: myfirstproject
-  credentials:
-    type: "service_account"
-    project_id: "carbide-oarlock-382113"
-    private_key_id: "fc25b377ae6c6d065dc44d78a6a1ba10e98f5b7d"
-    private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCpLOtAQuw5Dnum\nqNj2JvCiCBawS+SdRPk0La82AHerSBrR3AwadBtzJjMdDtPMhTpac5zfi6QqCRc3\nYvS6oDfbPQ7AqaHjFUPW9QWrjZKZj16bbofWRMqZS5Bxs0zQ/KGz4o9CE5hBb0AP\ndq7bww58MUSySneUXwTp20ovMkyQSZ1Ml4h4rsm0AS+YUoi4cXoF6UTmw3dMWc2J\npf6l1P3bDHg7kBs/ZhImAYslHaxLgcy7XjnRxNiSkB+1NS0FuAUllyfc4LOgkvqk\nvvFOXnvJeQsTwiXzHZbrvM5fywZOwGzIEIedn8XfbXGODA8V3pS+CofW7fxfhKkq\nwRCg5sL3AgMBAAECggEASPyusCZPSNx1P3VYSXaKWbWYqE3N34Ya58aP8YHpHzX4\nEDNZ623NS/QemDpF6VZPUyfO9ekGlfYfFI+2Wu/1uToR69AjnleV0Z8bZ6SoK2Ud\n4Xwh0bETIWjm9A7xpLZhwzyLJuxSQ2TOY/2Fuh1g2fbdlvgmuBX4hjZMPql6O8M5\nwKr9xzCj02+BHMtsqe1WLwKNWE0i5YlLr/27vuRlPcYlmEVNEuEreicCfKSXexxK\ngyiH2Re2hcCgoeiJTy2tD+jfd6jnLvJdjzbb6idCYsgje9vEHQB63p6lpn+6zo/9\nirwzP5t728hZwKCB1EZRtHILDGHHvE2n90/Pw3o//QKBgQDsE4uxKl8Zdl6zVHKn\n4C1jax1AAmkR2Wlp6QFJrZJloXyWB9e2l1tRMgatL2wZGhueXQ/VHMV8Sb2rJjAe\niBzglgBE6JaJJxRkMiyojMs+K//aBxbJkU80GeUEa7f3BejQLx3CDhNWvEaN1CdZ\nsgPif326OL6GNqrbeqKK1w30LQKBgQC3c/j9q8Xd6wEJcWOdohBJ8DFqz40u9bpr\nkwykKOJFfKwIsj4+7SZTIg1Eqdnv35V5XSkV/6gyF7q8ECSob3tVZwXrAxlOkfHS\n2MCMqWiAHyHhbFweo8cryuOkjLR22zCfHxrtQXD6V3N0h0rP3b+LEJt3Yywfwpce\nHHsLtHhWMwKBgQCMSJEaFjOszco4hlYbq/tMuLoI72XAVZFufidlwN7dxbhi7wYg\nWpDJDxEomKWDxR/kWyitWwt/b9JlgavWeMuwKXK/f/b0SWS0pZwkDIY5y6udw9im\nrtKCA2Ez307SW5CdJWJpjjOvtvG2FfvMMRxd26S6pD2TQ6kEAzvThTelgQKBgBzg\neHUVsNO5xjQCUTfi5sV8tYqmmQanT2zXfMnqVZOyiDHmPL4S/lFfrs78HX4Qp6qu\n62S3FXatHYu0ztBkm/lZeikAF9+yQWp7C/QYRobEX8ToFagNB7DxAtxH+bAr2H9z\nmf12q538XgQdt7z4nsn5Fz+3sJ5fNwJaYVP6WGbZAoGAUhmzZWSA1Ll7EE9Artig\nq8n7ttfzWDAI4x5lRdIb8XwZrO9i5QSYnq+PS9ggIiwbTGse8bgeXQuSTsBLB6xj\nHIHjKqKjVdjo50abWsM+R2aT4xI8aePUw5DVZ9vPI44AdjWu5+OaMtBOATOFyTkJ\n7Cp5gNXH2cSvdHQFjveXJyI=\n-----END PRIVATE KEY-----\n"
-    client_email: "docsales@carbide-oarlock-382113.iam.gserviceaccount.com"
-    client_id: "116391522634125330220"
-    auth_uri: "https://accounts.google.com/o/oauth2/auth"
-    token_uri: "https://oauth2.googleapis.com/token"
-    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
-    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/docsales%40carbide-oarlock-382113.iam.gserviceaccount.com"
-    universe_domain: "googleapis.com"
+  credentials: File.expand_path('gcs.keyfile.json')
   bucket: "bucket_docsales"
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)

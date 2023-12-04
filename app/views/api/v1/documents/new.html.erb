@@ -24,3 +24,9 @@
     </div>
   </div>
 <% end %>
+
+<% if flash[:error] %>
+  <div id="error_explanation">
+    <h2><%= flash[:error] %></h2>
+  </div>
+<% end %>

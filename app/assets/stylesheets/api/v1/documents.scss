@@ -18,6 +18,17 @@
   background-color: transparent;
 }
 
+.exclude {
+  background: red;
+  color: white;
+  font-size: 14px;
+  padding: 4px 8px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
 .documents_background {
   max-width: 1280px;
   min-width: 360px;

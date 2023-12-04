@@ -43,7 +43,7 @@
 </style>
 
 <% if @document.nil? == false %>
-  <%= link_to 'Back', list_api_v1_documents_path %>
+  <a href="<%= list_api_v1_documents_path %>" class="return">Back</a>
 <% end %>
 
 <h1>Contrato de prestação de serviços</h1>

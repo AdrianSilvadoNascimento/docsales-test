@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_02_130733) do
+ActiveRecord::Schema.define(version: 2023_12_04_120000) do
 
   create_table "documents", force: :cascade do |t|
     t.string "pdf_url"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2023_12_02_130733) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "uuid"
+    t.string "customer_name"
+    t.decimal "contract_value", precision: 10, scale: 2
   end
 
   create_table "line_items", force: :cascade do |t|

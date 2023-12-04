@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         collection do
           get 'list', to: 'documents#index'
           get 'template', to: 'documents#template'
+          delete 'exclude', to: 'documents#destroy'
         end
         
         member do
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  root 'api/v1/documents#index'
 end
